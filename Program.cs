@@ -10,7 +10,7 @@
         {
             //Get the tip percentage from the user
             Console.Write("Enter the tip percentage (e.g., 15 for 15%): ");
-            if (double.TryParse(Console.ReadLine(), out double tipPercentage) && tipPercentage >= 0)
+            if (double.TryParse(Console.ReadLine(), out double tipPercentage)) 
             {
                 //Calculate the tip amount
                 double tipDecimal = tipPercentage / 100;
@@ -18,10 +18,10 @@
                 //Calculate the total amount to be paid
                 decimal totalAmount = totalPrice + tipAmount;
                 //Display the results
-                Console.WriteLine($"Bill Total: {totalPrice,10:C}");
-                Console.WriteLine($"Tip Amount: ${tipAmount:F2}");
+                Console.WriteLine($"Bill Total: {totalPrice:C}");
+                Console.WriteLine($"Tip Amount ({tipPercentage / 100:P0}) : {tipAmount:C}");
                 Console.WriteLine("================================");
-                Console.WriteLine($"Total Amount to be Paid: ${totalAmount:F2}");
+                Console.WriteLine($"Total Amount to be Paid: {totalAmount:C}");
             }
             else
             {
